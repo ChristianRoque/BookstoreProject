@@ -1,8 +1,9 @@
 package com.Group13.BookstoreProject.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.TypeAlias;
 
-
+@TypeAlias("pers")
 public class Customer {
 
     @Id
