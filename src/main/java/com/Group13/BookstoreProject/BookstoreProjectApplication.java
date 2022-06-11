@@ -1,5 +1,7 @@
 package com.Group13.BookstoreProject;
 
+import com.Group13.BookstoreProject.models.Customer;
+import com.Group13.BookstoreProject.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

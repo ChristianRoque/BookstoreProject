@@ -1,4 +1,4 @@
-package com.Group13.BookstoreProject;
+package com.Group13.BookstoreProject.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

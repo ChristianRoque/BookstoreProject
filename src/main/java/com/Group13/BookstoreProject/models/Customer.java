@@ -1,4 +1,4 @@
-package com.Group13.BookstoreProject;
+package com.Group13.BookstoreProject.models;
 
 import org.springframework.data.annotation.Id;
 
