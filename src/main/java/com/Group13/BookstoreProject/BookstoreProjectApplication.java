@@ -4,9 +4,9 @@ import com.Group13.BookstoreProject.models.Customer;
 import com.Group13.BookstoreProject.repositories.CustomerRepository;
 import com.mongodb.ConnectionString;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 // Example
 import static org.springframework.data.mongodb.core.query.Criteria.where;
@@ -32,7 +32,8 @@ public class BookstoreProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BookstoreProjectApplication.class, args);
 
-		ConnectionString connectionString = new ConnectionString(System.getenv("mongo"));
+
+//		ConnectionString connectionString = new ConnectionString(System.getenv("mongo"));
 
 		MongoOperations mongoOps = new MongoTemplate(
 				new SimpleMongoClientDatabaseFactory(MongoClients.create(), "ProjectDB")
@@ -44,6 +45,8 @@ public class BookstoreProjectApplication {
 
 		System.out.println("it does run");
 		mongoOps.save(newCustomer);
+
+		System.out.println(System.getenv("name"));
 	}
 
 }
