@@ -4,7 +4,6 @@ import com.Group13.BookstoreProject.models.Customer;
 import com.Group13.BookstoreProject.repositories.CustomerRepository;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
-import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +44,8 @@ public class BookstoreProjectApplication implements CommandLineRunner {
 		MongoOperations mongoOps = new MongoTemplate(
 				new SimpleMongoClientDatabaseFactory(MongoClients.create(mongoClientSettings), "ProjectDB")
 		);
+
+		mongoOps.getCollection("ProjectDB").drop();
 
 		Customer newCustomer = new Customer("Christian", "Roque");
 		log.info("Insert: " + newCustomer);
