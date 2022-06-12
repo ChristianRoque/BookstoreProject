@@ -45,7 +45,7 @@ public class BookstoreProjectApplication implements CommandLineRunner {
 				new SimpleMongoClientDatabaseFactory(MongoClients.create(mongoClientSettings), "ProjectDB")
 		);
 
-		mongoOps.getCollection("ProjectDB").drop();
+		mongoOps.getCollection("customer").drop();
 
 		Customer newCustomer = new Customer("Christian", "Roque");
 		log.info("Insert: " + newCustomer);
