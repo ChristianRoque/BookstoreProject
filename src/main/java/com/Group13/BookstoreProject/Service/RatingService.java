@@ -2,7 +2,6 @@ package com.Group13.BookstoreProject.Service;
 
 import com.Group13.BookstoreProject.models.Rating;
 import java.util.List;
-import java.util.Optional;
 
 public interface RatingService {
 

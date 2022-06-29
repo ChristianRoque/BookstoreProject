@@ -14,7 +14,7 @@ public class RatingController {
     @Autowired
     private RatingServiceImpl ratingReposity;
 
-    @PostMapping(value="/create")
+    @PutMapping(value="/create")
     public void newRating(@RequestBody Rating rating) {
         this.ratingReposity.createRating(rating);
     }
