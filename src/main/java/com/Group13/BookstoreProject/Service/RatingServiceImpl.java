@@ -30,17 +30,17 @@ public class RatingServiceImpl implements RatingService {
     }
 
     @Override
-    public Rating findRatingByBookId(String _bookId) {
+    public List<Rating> findRatingByBookId(String _bookId) {
         return ratingRepository.findBookId(_bookId);
     }
 
     @Override
-    public Rating findRatingByUserId(String _userId) {
+    public List<Rating> findRatingByUserId(String _userId) {
         return ratingRepository.findUserByID(_userId);
     }
 
     @Override
-    public Rating findRatingByDate(String _date) {
+    public List<Rating> findRatingByDate(String _date) {
         return ratingRepository.findDateBy(_date);
     }
 

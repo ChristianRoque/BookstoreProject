@@ -11,11 +11,11 @@ public interface RatingService {
 
     Rating findRatingById(String _id);
 
-    Rating findRatingByBookId(String _bookId);
+    List<Rating> findRatingByBookId(String _bookId);
 
-    Rating findRatingByUserId(String _userId);
+    List<Rating> findRatingByUserId(String _userId);
 
-    Rating findRatingByDate(String _date);
+    List<Rating> findRatingByDate(String _date);
 
     void updateRating(Rating _rating);
 

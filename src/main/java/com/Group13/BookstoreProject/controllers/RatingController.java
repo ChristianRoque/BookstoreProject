@@ -30,17 +30,17 @@ public class RatingController {
     }
 
     @GetMapping(value="/book/{_id}")
-    public Rating getRatingByBookId(@PathVariable String _id) {
+    public List<Rating> getRatingByBookId(@PathVariable String _id) {
         return ratingReposity.findRatingByBookId(_id);
     }
 
     @GetMapping(value="/user/{_id}")
-    public Rating getRatingByUserId(@PathVariable String _id) {
+    public List<Rating> getRatingByUserId(@PathVariable String _id) {
         return ratingReposity.findRatingByUserId(_id);
     }
 
     @GetMapping(value="/date/{_date}")
-    public Rating getRatingByDate(@PathVariable String _date) {
+    public List<Rating> getRatingByDate(@PathVariable String _date) {
         return ratingReposity.findRatingByDate(_date);
     }
 
