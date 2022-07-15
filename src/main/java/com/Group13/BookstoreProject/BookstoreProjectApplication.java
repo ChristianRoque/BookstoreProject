@@ -13,6 +13,7 @@ public class BookstoreProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookstoreProjectApplication.class, args);
+		System.out.println("IM connected");
 	}
 
 	@Bean
