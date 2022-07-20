@@ -18,6 +18,7 @@ public class WishListController {
     public void createWishList(WishList _wishList) {
         wishListReposity.createWishList(_wishList);
     }
+
     @GetMapping(value="/")
     public List<WishList> getAllWishlist() {
         return wishListReposity.getAllWishList();
@@ -32,12 +33,13 @@ public class WishListController {
     public WishList getWishListByName(@PathVariable String _id) {
         return wishListReposity.getWishListById(_id);
     }
+
     @GetMapping(value="/user/{_id}")
     public List<WishList> getWishListByUserId(@PathVariable String _id) {
         return wishListReposity.getWishListByUser(_id);
     }
 
-    @PostMapping(value="/update")
+    @PatchMapping(value="/update")
     public void updateWishList(@RequestBody WishList _wishList) {
         wishListReposity.updateWishList(_wishList);
     }
@@ -47,7 +49,7 @@ public class WishListController {
         wishListReposity.addBookWishList(_id,_book);
     }
 
-    @PostMapping(value="/user/{id}")
+    @PatchMapping(value="/user/{id}")
     public void removeBookWishList(@PathVariable String _id, @RequestBody String _book) {
         wishListReposity.addBookWishList(_id,_book);
     }
@@ -56,5 +58,4 @@ public class WishListController {
     public void removeBookWishList(@PathVariable String _id) {
         wishListReposity.deleteWishList(_id);
     }
-
 }
