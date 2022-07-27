@@ -4,16 +4,18 @@ package com.Group13.BookstoreProject.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 
 @TypeAlias("_wishlist") @Document(collection = "wishList")
 public class WishList {
     @Id
-    private String id;
-    private String user;
-    private String name;
-    private ArrayList<String> books;
+    private String id = "1";
+    private String user = "usernameDefault";
+    private String name = "userNameDefault";
+    private ArrayList<String> books = new ArrayList<String>();
 
     public WishList() {
     }

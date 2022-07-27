@@ -22,7 +22,7 @@ public class WishListServiceImpl implements WishListService {
         {
             wishListRepository.insert(_wishList);
         } else {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Already exists.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"User already has another three other wishlists.Please delete one.");
         }
     }
 
