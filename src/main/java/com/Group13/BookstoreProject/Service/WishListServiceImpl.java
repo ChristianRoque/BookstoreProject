@@ -3,9 +3,10 @@ package com.Group13.BookstoreProject.Service;
 import com.Group13.BookstoreProject.models.WishList;
 import com.Group13.BookstoreProject.repositories.WishListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,7 +18,12 @@ public class WishListServiceImpl implements WishListService {
 
     @Override
     public void createWishList(WishList _wishList) {
-        wishListRepository.insert(_wishList);
+        if (wishListRepository.findWishListByUser(_wishList.getUser()).size() < 3)
+        {
+            wishListRepository.insert(_wishList);
+        } else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Already exists.");
+        }
     }
 
     @Override
