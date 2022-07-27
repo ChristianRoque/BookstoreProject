@@ -14,7 +14,7 @@ public class WishListController {
     @Autowired
     private WishListServiceImpl wishListReposity;
 
-    @PutMapping(value="/create")
+    @PostMapping(value="/create")
     public void createWishList(@RequestBody WishList _wishList) {
         wishListReposity.createWishList(_wishList);
     }
@@ -39,17 +39,17 @@ public class WishListController {
         return wishListReposity.getWishListByUser(_id);
     }
 
-    @PostMapping(value="/user/{_id}/add")
+    @PutMapping(value="/user/{_id}/add")
     public void addBookWishList(@PathVariable String _id, @RequestBody String _book) {
         wishListReposity.addBookWishList(_id,_book);
     }
 
-    @PostMapping(value="/user/{_id}/remove")
+    @PutMapping(value="/user/{_id}/remove")
     public void removeBookWishList(@PathVariable String _id, @RequestBody String _book) {
         wishListReposity.removeBookWishList(_id,_book);
     }
 
-    @PostMapping(value="/update")
+    @PutMapping(value="/update")
     public void updateWishList(@RequestBody WishList _wishList) {
         wishListReposity.updateWishList(_wishList);
     }
