@@ -1,4 +1,4 @@
-package com.Group13.BookstoreProject.services;
+package com.Group13.BookstoreProject.Service;
 
 import com.Group13.BookstoreProject.models.User;
 import com.Group13.BookstoreProject.repositories.UserRepository;

@@ -1,6 +1,6 @@
 package com.Group13.BookstoreProject.controllers;
 
-import com.Group13.BookstoreProject.services.UserService;
+import com.Group13.BookstoreProject.Service.UserService;
 import com.Group13.BookstoreProject.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
