@@ -13,7 +13,7 @@ public class UserController {
     @Autowired
     private UserService userRep;
 
-    @PutMapping("/create")
+    @PostMapping("/create")
     public void createUser(@RequestBody User user) {
         if (userRep.findUserByUsername(user.getUsername()) == null) {
             userRep.createUser(user);
@@ -30,7 +30,7 @@ public class UserController {
         return userRep.findUserByUsername(username);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     public void updateUser(@RequestBody User user) {
         userRep.updateUser(user);
     }
@@ -40,7 +40,7 @@ public class UserController {
         userRep.deleteUser(username);
     }
 
-    @PostMapping("/{username}/create-card")
+    @PutMapping("/{username}/create-card")
     public void createCard(@PathVariable String username, @RequestBody String card) {
         userRep.createUserCard(card,username);
     }
@@ -49,5 +49,4 @@ public class UserController {
     public List<String> getAllUserCards(@PathVariable String username) {
         return userRep.getUserCreditCards(username);
     }
-
 }
