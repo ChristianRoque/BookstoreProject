@@ -1,34 +1,28 @@
 package com.Group13.BookstoreProject;
 
-import java.util.Arrays;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
-
-@SpringBootApplication
-public class BookstoreProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookstoreProjectApplication.class, args);
-		System.out.println("IM connected");
+		System.out.println("I'm connected.");
 	}
 
-	@Bean
-	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-		return args -> {
+@SpringBootApplication
+public class BookstoreProjectApplication implements CommandLineRunner {
 
-			System.out.println("Let's inspect the beans provided by Spring Boot:");
+	@Autowired
+	private static final org.apache.commons.logging.Log log = LogFactory.getLog(BookstoreProjectApplication.class);
+	public static final Logger Log = LoggerFactory.getLogger(BookstoreProjectApplication.class);
 
-			String[] beanNames = ctx.getBeanDefinitionNames();
-			Arrays.sort(beanNames);
-			for (String beanName : beanNames) {
-				System.out.println(beanName);
-			}
-
-		};
+	public static void main(String[] args) {
+		SpringApplication.run(BookstoreProjectApplication.class, args);
 	}
 
+	public void run(String... arg0) throws Exception {
+	}
 }
