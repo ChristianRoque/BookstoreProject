@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 
-
 @TypeAlias("_wishlist") @Document(collection = "wishList")
 public class WishList {
     @Id
@@ -21,13 +20,9 @@ public class WishList {
 
     public WishList(String _id, String _user, String _name, ArrayList<String> _bookList) {
         this.id = _id;
-        this.user =  _user;
+        this.user = _user;
         this.name = _name;
-        if (_bookList == null) {
-            this.books = new ArrayList<String>();
-        } else {
-            this.books = _bookList;
-        }
+        this.books = _bookList;
     }
 
     public String getId() {
@@ -37,6 +32,10 @@ public class WishList {
     public void setId(String _id) {
         this.id = _id;
     }
+
+    public String getUser() { return user; }
+
+    public void setUser(String _user) {this.user = _user; }
 
     public String getName() {
         return name;

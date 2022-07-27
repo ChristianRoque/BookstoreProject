@@ -15,7 +15,7 @@ public class WishListController {
     private WishListServiceImpl wishListReposity;
 
     @PutMapping(value="/create")
-    public void createWishList(WishList _wishList) {
+    public void createWishList(@RequestBody WishList _wishList) {
         wishListReposity.createWishList(_wishList);
     }
 
