@@ -48,7 +48,9 @@ public class WishListServiceImpl implements WishListService {
 
     @Override
     public void updateWishList(WishList _wishList) {
-        if(wishListRepository.findWishListById(_wishList.getName()) != null) {
+        if(wishListRepository.findWishListById(_wishList.getId()) == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Cannot update.Entry does not exist.");
+        } else {
             wishListRepository.save(_wishList);
         }
     }

@@ -39,22 +39,22 @@ public class WishListController {
         return wishListReposity.getWishListByUser(_id);
     }
 
-    @PatchMapping(value="/update")
-    public void updateWishList(@RequestBody WishList _wishList) {
-        wishListReposity.updateWishList(_wishList);
-    }
-
-    @PostMapping(value="/user/{_id}")
+    @PostMapping(value="/user/{_id}/add")
     public void addBookWishList(@PathVariable String _id, @RequestBody String _book) {
         wishListReposity.addBookWishList(_id,_book);
     }
 
-    @PatchMapping(value="/user/{id}")
+    @PostMapping(value="/user/{_id}/remove")
     public void removeBookWishList(@PathVariable String _id, @RequestBody String _book) {
-        wishListReposity.addBookWishList(_id,_book);
+        wishListReposity.removeBookWishList(_id,_book);
     }
 
-    @DeleteMapping(value="/delete/{id}")
+    @PostMapping(value="/update")
+    public void updateWishList(@RequestBody WishList _wishList) {
+        wishListReposity.updateWishList(_wishList);
+    }
+
+    @DeleteMapping(value="/delete/{_id}")
     public void removeBookWishList(@PathVariable String _id) {
         wishListReposity.deleteWishList(_id);
     }
