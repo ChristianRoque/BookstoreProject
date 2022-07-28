@@ -18,6 +18,6 @@ public interface CommentRepository extends MongoRepository<Comment, String> {
     List<Comment> findDateBy(String date);
    //@Query("{rating: '?0}")
     //List<Comment> findRating(double rating);
-   //@Query("Select rating FROM comments rating WHERE comments.id=:id")
-    //List<Comment> getById(@Param("id")String id);
+   @Query("Select rating FROM comments rating WHERE comments.id=:id")
+    List<Comment> getById(@Param("id")String id);
 }
