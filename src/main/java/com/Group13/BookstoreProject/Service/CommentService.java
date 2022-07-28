@@ -19,8 +19,11 @@ public interface CommentService {
 
     List<Comment> findCommentByDate(String _date);
 
-    void updateComment(Comment _rating);
+    void updateComment(Comment comment);
+
+    void updateRating(Comment _rating);
 
     void deleteComment(String _id);
 
+    double getAverage(String _bookId);
 }

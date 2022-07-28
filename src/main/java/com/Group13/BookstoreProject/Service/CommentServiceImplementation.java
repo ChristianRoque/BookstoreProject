@@ -4,6 +4,7 @@ import com.Group13.BookstoreProject.Comment;
 import com.Group13.BookstoreProject.repositories.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -49,8 +50,25 @@ public class CommentServiceImplementation implements CommentService {
     }
 
     @Override
+    public void updateRating(Comment _rating) {
+        commentRepository.save(_rating);
+    }
+
+    @Override
     public void deleteComment(String _id) {
         commentRepository.deleteById(_id);
+    }
+
+    @Override
+    public double getAverage(String _bookId) {
+        List<Comment> mylist = commentRepository.findBookId(_bookId);
+        double rating = 0;
+        for (int i = 0; i < mylist.size(); i++) {
+            if (mylist.size() >= 0) {
+                rating += mylist.get(i).getRating();
+            }
+        }
+        return rating/mylist.size();
     }
 
 }
