@@ -45,6 +45,11 @@ import org.springframework.web.bind.annotation.*;
             return commentReposity.findCommentByDate(_date);
         }
 
+        @GetMapping(value="/average/book/{_Id}")
+        public double getAverage(@PathVariable String _Id) {
+        return commentReposity.getAverage(_Id);
+        }
+
         @PutMapping(value ="/update")
         public void saveExistingComment(@RequestBody Comment _comment) {
             commentReposity.updateComment(_comment);
