@@ -34,9 +34,9 @@ public class Comment {
 	// Getters and setters
 	public String getId() { return id; }
 
-	public void setId(String id)
+	public void setId(String _id)
 	{
-		this.id = id;
+		this.id = _id;
 	}
 
 	public String getUser()
@@ -44,9 +44,9 @@ public class Comment {
 		return user;
 	}
 
-	public void setUser(String firstName)
+	public void setUser(String _user)
 	{
-		this.user = user;
+		this.user = _user;
 	}
 
 	public double getRating(){
