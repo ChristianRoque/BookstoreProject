@@ -20,7 +20,7 @@ public class WishListServiceImpl implements WishListService {
     public void createWishList(WishList _wishList) {
         boolean unique = wishListRepository.findWishListByName(_wishList.getName()).getName() == null;
         if (!unique) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Wishlist already exists");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Wishlist with that name already exists.");
         }
         if (wishListRepository.findWishListByUser(_wishList.getUser()).size() >= 3)
         {
