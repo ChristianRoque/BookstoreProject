@@ -14,7 +14,6 @@ import java.util.List;
 @RequestMapping("/BookstoreProject")
 public class AdminController {
 
-
     private final AdminServices adminS;
 
     @Autowired
@@ -28,7 +27,6 @@ public class AdminController {
 
     @PostMapping("/bookcatalog/add_books")
     public void abbBookToDB(@RequestBody final List<Bookgenre> bookList) {
-
 
         List<Bookgenre> idmaker;
 

@@ -30,8 +30,8 @@ public class WishListController {
     }
 
     @GetMapping(value="/name/{_name}")
-    public WishList getWishListByName(@PathVariable String _id) {
-        return wishListReposity.getWishListById(_id);
+    public WishList getWishListByName(@PathVariable String _name) {
+        return wishListReposity.getWishListByName(_name);
     }
 
     @GetMapping(value="/user/{_id}")

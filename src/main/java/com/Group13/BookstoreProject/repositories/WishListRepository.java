@@ -11,6 +11,6 @@ public interface WishListRepository extends MongoRepository<WishList, String> {
     List<WishList> findWishListByUser(String _id);
     @Query("{id: '?0'}")
     WishList findWishListById(String _id);
-    @Query("{name: '?0'")
+    @Query("{name: '?0'}")
     WishList findWishListByName(String _name);
 }
