@@ -30,14 +30,14 @@ import org.springframework.web.bind.annotation.*;
             return commentReposity.findCommentById(_id);
         }
 
-        @GetMapping(value="/book/{_id}")
-        public List<Comment> getCommentByBookId(@PathVariable String _id) {
-            return commentReposity.findCommentByBookId(_id);
+        @GetMapping(value="/book/{_Id}")
+        public List<Comment> getCommentByBookId(@PathVariable String _Id) {
+            return commentReposity.findCommentByBookId(_Id);
         }
 
-        @GetMapping(value="/user/{_id}")
-        public List<Comment> getCommentByUserId(@PathVariable String _id) {
-            return commentReposity.findCommentByUserId(_id);
+        @GetMapping(value="/user/{_Id}")
+        public List<Comment> getCommentByUserId(@PathVariable String _Id) {
+            return commentReposity.findCommentByUserId(_Id);
         }
 
         @GetMapping(value="/date/{_date}")

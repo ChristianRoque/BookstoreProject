@@ -6,38 +6,33 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 // Creating Comment Entity
 public class Comment {
+	// initializing values
+	private String id;
+	private double rating;
+	private String book;
+	private String user;
+	private String comment;
+	private String date;
 
 	// Constructor to assign values to Comment
-	public Comment(String _id, double _rating, String _bookID, String uesrId, String firstName, String lastName,
-				   String _comment, String _date)
+	public Comment(String _id, double _rating, String _bookId, String _userId, String _comment, String _date)
 	{
 		super();
 		this.id = _id;
 		this.rating = _rating;
-		this.book = _bookID;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.comment = comment;
+		this.book = _bookId;
+		this.user = _userId;
+		this.comment = _comment;
 		this.date = _date;
 	}
-
-	// initializing values
-	private String id;
-	private String book;
-	private double rating;
-	private String firstName;
-	private String lastName;
-	private String comment;
-	private String date;
 
 	// Overriding the toString method to find all the values
 	@Override
 	public String toString()
 	{
 		return "Comment [id="
-				+ id + "book=" + book + "rating =" + rating + ", firstName="
-				+ firstName + ", lastName="
-				+ lastName + ", comment="
+				+ id + "book =" + book + "rating =" + rating
+				+ user + "user ="
 				+ comment + "date" + date + "]";
 	}
 
@@ -49,24 +44,14 @@ public class Comment {
 		this.id = id;
 	}
 
-	public void setFirstName(String firstName)
+	public void setUser(String firstName)
 	{
-		this.firstName = firstName;
+		this.user = user;
 	}
 
-	public String getFirstName()
+	public String getUser()
 	{
-		return firstName;
-	}
-
-	public String getLastName()
-	{
-		return lastName;
-	}
-
-	public void setLastName(String lastName)
-	{
-		this.lastName = lastName;
+		return user;
 	}
 
 	public double getRating(){
@@ -102,6 +87,4 @@ public class Comment {
 	public void setDate(String _date) {
 		this.date = _date;
 	}
-
-
 }
