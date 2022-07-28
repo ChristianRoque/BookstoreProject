@@ -18,8 +18,8 @@ public class WishListServiceImpl implements WishListService {
 
     @Override
     public void createWishList(WishList _wishList) {
-        boolean unique = wishListRepository.findWishListByName(_wishList.getName()).getName() == null;
-        if (!unique) {
+        WishList dup = wishListRepository.findWishListByName(_wishList.getName());
+        if (dup != null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Wishlist with that name already exists.");
         }
         if (wishListRepository.findWishListByUser(_wishList.getUser()).size() >= 3)
