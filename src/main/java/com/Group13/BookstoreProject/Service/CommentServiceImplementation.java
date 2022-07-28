@@ -30,14 +30,17 @@ public class CommentServiceImplementation implements CommentService {
     }
 
     @Override
+    public List<Comment> getById(String _id) {
+        return commentRepository.getById(_id);
+    }
+
+    @Override
     public List<Comment> findCommentByBookId(String _bookId) {
         return commentRepository.findBookId(_bookId);
     }
 
     @Override
-    public List<Comment> findCommentByUserId(String _userId) {
-        return commentRepository.findUserByID(_userId);
-    }
+    public List<Comment> findCommentByUserId(String _userId) { return commentRepository.findUserByID(_userId); }
 
     @Override
     public List<Comment> findCommentByDate(String _date) {
@@ -71,5 +74,4 @@ public class CommentServiceImplementation implements CommentService {
         System.out.println("Average rating: " + rating/mylist.size());
         return rating/mylist.size();
     }
-
 }

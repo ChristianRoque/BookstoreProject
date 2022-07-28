@@ -13,6 +13,8 @@ public interface CommentService {
 
     Comment findCommentById(String _id);
 
+    List<Comment> getById(String _id);
+
     List<Comment> findCommentByBookId(String _bookId);
 
     List<Comment> findCommentByUserId(String _userId);
