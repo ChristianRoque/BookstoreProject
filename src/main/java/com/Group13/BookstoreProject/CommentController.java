@@ -50,6 +50,11 @@ import org.springframework.web.bind.annotation.*;
         return commentReposity.getAverage(_Id);
         }
 
+        @GetMapping(value="/sort/book/{_Id}")
+        public List<Comment> getById(@PathVariable String _Id) {
+        return commentReposity.getById(_Id);
+    }
+
         @PutMapping(value ="/update")
         public void saveExistingComment(@RequestBody Comment _comment) {
             commentReposity.updateComment(_comment);
