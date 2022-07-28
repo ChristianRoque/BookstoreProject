@@ -24,11 +24,6 @@ public class WishListController {
         return wishListReposity.getAllWishList();
     }
 
-    @GetMapping(value="/id/{_id}")
-    public WishList getWishListById(@PathVariable String _id) {
-        return wishListReposity.getWishListById(_id);
-    }
-
     @GetMapping(value="/name/{_name}")
     public WishList getWishListByName(@PathVariable String _name) {
         return wishListReposity.getWishListByName(_name);
@@ -39,12 +34,17 @@ public class WishListController {
         return wishListReposity.getWishListByUser(_id);
     }
 
-    @PutMapping(value="/user/{_id}/add")
+    @GetMapping(value="/id/{_id}")
+    public WishList getWishListById(@PathVariable String _id) {
+        return wishListReposity.getWishListById(_id);
+    }
+
+    @PutMapping(value="/id/{_id}/add")
     public void addBookWishList(@PathVariable String _id, @RequestBody String _book) {
         wishListReposity.addBookWishList(_id,_book);
     }
 
-    @PutMapping(value="/user/{_id}/remove")
+    @PutMapping(value="/id/{_id}/remove")
     public void removeBookWishList(@PathVariable String _id, @RequestBody String _book) {
         wishListReposity.removeBookWishList(_id,_book);
     }
