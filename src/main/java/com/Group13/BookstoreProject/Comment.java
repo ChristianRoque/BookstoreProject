@@ -5,8 +5,10 @@ import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 // Creating Comment Entity
+@TypeAlias("_comments") @Document(collection = "comments")
 public class Comment {
 	// initializing values
+	@Id
 	private String id;
 	private double rating;
 	private String book;
@@ -14,26 +16,19 @@ public class Comment {
 	private String comment;
 	private String date;
 
+	public Comment() {
+
+	}
+
 	// Constructor to assign values to Comment
 	public Comment(String _id, double _rating, String _bookId, String _userId, String _comment, String _date)
 	{
-		super();
 		this.id = _id;
 		this.rating = _rating;
 		this.book = _bookId;
 		this.user = _userId;
 		this.comment = _comment;
 		this.date = _date;
-	}
-
-	// Overriding the toString method to find all the values
-	@Override
-	public String toString()
-	{
-		return "Comment [id="
-				+ id + "book =" + book + "rating =" + rating
-				+ user + "user ="
-				+ comment + "date" + date + "]";
 	}
 
 	// Getters and setters
@@ -44,14 +39,14 @@ public class Comment {
 		this.id = id;
 	}
 
-	public void setUser(String firstName)
-	{
-		this.user = user;
-	}
-
 	public String getUser()
 	{
 		return user;
+	}
+
+	public void setUser(String firstName)
+	{
+		this.user = user;
 	}
 
 	public double getRating(){
