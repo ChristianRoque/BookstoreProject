@@ -68,6 +68,7 @@ public class CommentServiceImplementation implements CommentService {
                 rating += mylist.get(i).getRating();
             }
         }
+        System.out.println("Average rating: " + rating/mylist.size());
         return rating/mylist.size();
     }
 
