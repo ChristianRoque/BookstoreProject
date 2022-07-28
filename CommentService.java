@@ -1,23 +1,24 @@
 package com.Group13.BookstoreProject.Service;
 
+
 import com.Group13.BookstoreProject.Comment;
 import java.util.List;
 
 public interface CommentService {
 
-    void createComment(Comment _rating);
+    void createRating(Comment _rating);
 
-    List<Comment> findAllComments();
+    List<Comment> findAllRatings();
 
-    Comment findCommentById(String _id);
+    Comment findRatingById(String _id);
 
-    List<Comment> findCommentByBookId(String _bookId);
+    List<Comment> findRatingByBookId(String _bookId);
 
-    List<Comment> findCommentByUserId(String _userId);
+    List<Comment> findRatingByUserId(String _userId);
 
-    List<Comment> findCommentByDate(String _date);
+    List<Comment> findRatingByDate(String _date);
 
-    void updateComment(Comment _rating);
+    void updateRating(Comment _rating);
 
-    void deleteComment(String _id);
+    void deleteRating(String _id);
 }
